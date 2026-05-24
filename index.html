@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSAT Kelas 2 — Preview & Pilihan Soal</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --teal: #0F6E56;
+  --teal-lt: #E1F5EE;
+  --amber: #854F0B;
+  --amber-lt: #FAEEDA;
+  --blue: #1a5c9e;
+  --blue-lt: #E6F1FB;
+  --green: #3B6D11;
+  --green-lt: #EAF3DE;
+  --gray: #5F5E5A;
+  --gray-lt: #F1EFE8;
+  --bg: #ffffff;
+  --bg2: #f8f8f6;
+  --bg3: #f1f0ec;
+  --text: #1a1a18;
+  --text2: #5a5a56;
+  --text3: #8a8a84;
+  --border: #e0dfd8;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #f1f0ec 0%, #f8f8f6 100%);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, var(--teal) 0%, #0a4a38 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 40px rgba(15, 110, 86, 0.15);
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  font-size: 1.1em;
+  opacity: 0.95;
+  margin-bottom: 5px;
+}
+
+.header .subtitle {
+  font-size: 0.95em;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+.badge-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 0.9em;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.subject-section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-icon {
+  font-size: 1.4em;
+}
+
+/* CARDS */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: var(--text);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card-icon {
+  font-size: 2.5em;
+  min-width: 60px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.card-subtitle {
+  font-size: 0.9em;
+  color: var(--text2);
+  margin-top: 4px;
+}
+
+.card-badge {
+  display: inline-block;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: var(--text2);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  color: var(--text2);
+}
+
+.stat-value {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--text);
+}
+
+.topics {
+  flex-grow: 1;
+  margin: 16px 0;
+}
+
+.topic-tag {
+  display: inline-block;
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  margin: 4px 4px 4px 0;
+  color: var(--text2);
+}
+
+.cta {
+  margin-top: auto;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--teal) 0%, #0a4a38 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover .cta {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(15, 110, 86, 0.3);
+}
+
+.cta-secondary {
+  background: var(--amber);
+}
+
+.card:hover .cta-secondary {
+  box-shadow: 0 4px 12px rgba(133, 79, 11, 0.3);
+}
+
+/* COLOR VARIANTS */
+.card.bahasa {
+  border-top: 4px solid var(--teal);
+}
+
+.card.bahasa .badge-set {
+  background: var(--teal-lt);
+  color: var(--teal);
+}
+
+.card.matematika {
+  border-top: 4px solid var(--amber);
+}
+
+.card.matematika .badge-set {
+  background: var(--amber-lt);
+  color: var(--amber);
+}
+
+.badge-set {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.footer h3 {
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.footer p {
+  color: var(--text2);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.footer-link {
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.footer .divider {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 20px;
+  }
+
+  .header h1 {
+    font-size: 1.8em;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.4em;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- HEADER -->
+  <div class="header">
+    <h1>📚 PSAT Kelas 2 — Bank Soal Latihan</h1>
+    <p>Koleksi soal latihan persiapan PSAT untuk SD Kelas II</p>
+    <p class="subtitle">Bahasa Indonesia & Matematika — Interaktif & Lengkap</p>
+    <div class="badge-row">
+      <span class="badge">✅ Soal Baru</span>
+      <span class="badge">📊 70+ Pertanyaan</span>
+      <span class="badge">🎯 Interaktif</span>
+      <span class="badge">📱 Mobile Friendly</span>
+    </div>
+  </div>
+
+  <!-- BAHASA INDONESIA SECTION -->
+  <div class="subject-section">
+    <div class="section-title">
+      <span class="section-icon">🇮🇩</span>
+      Bahasa Indonesia
+    </div>
+    <div class="grid">
+      <!-- Bahasa Indonesia Set 1 -->
+      <a href="psat_bahasa_indonesia_kelas2_ben.html" class="card bahasa" title="Buka soal Bahasa Indonesia Set 1">
+        <div class="card-header">
+          <div class="card-icon">📖</div>
+          <div>
+            <div class="card-title">Set 1 — Soal Dasar</div>
+            <div class="card-subtitle">Materi Pilihan Ganda & Uraian</div>
+          </div>
+        </div>
+        <span class="badge-set">Soal Baru</span>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Pilihan Ganda:</span>
+            <span class="stat-value">40</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Isian:</span>
+            <span class="stat-value">20</span>
+          </div>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Kalimat Aktif-Pasif</span>
+          <span class="topic-tag">Teks Prosedur</span>
+          <span class="topic-tag">Deskripsi</span>
+          <span class="topic-tag">Membaca</span>
+          <span class="topic-tag">Puisi</span>
+        </div>
+        <div class="cta">Mulai Latihan →</div>
+      </a>
+
+      <!-- Bahasa Indonesia Set 2 -->
+      <a href="psat_bahasa_indonesia_kelas2_ben2.html" class="card bahasa" title="Buka soal Bahasa Indonesia Set 2">
+        <div class="card-header">
+          <div class="card-icon">📚</div>
+          <div>
+            <div class="card-title">Set 2 — Soal Lanjut</div>
+            <div class="card-subtitle">Berbasis Lembar Kerja</div>
+          </div>
+        </div>
+        <span class="badge-set">Terbaru</span>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Pilihan Ganda:</span>
+            <span class="stat-value">40</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Uraian:</span>
+            <span class="stat-value">10</span>
+          </div>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Bacaan Pemahaman</span>
+          <span class="topic-tag">Kalimat Aktif-Pasif</span>
+          <span class="topic-tag">Prosedur</span>
+          <span class="topic-tag">Sastra</span>
+        </div>
+        <div class="cta">Mulai Latihan →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MATEMATIKA SECTION -->
+  <div class="subject-section">
+    <div class="section-title">
+      <span class="section-icon">🔢</span>
+      Matematika
+    </div>
+    <div class="grid">
+      <!-- Matematika Set Tantangan -->
+      <a href="psat_matematika_kelas2_set_tantangan_ben.html" class="card matematika" title="Buka soal Matematika Set Tantangan">
+        <div class="card-header">
+          <div class="card-icon">⏱️</div>
+          <div>
+            <div class="card-title">Set Tantangan</div>
+            <div class="card-subtitle">Soal Multi-Langkah</div>
+          </div>
+        </div>
+        <span class="badge-set">Tingkat Tinggi</span>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Total Soal:</span>
+            <span class="stat-value">60</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Bagian:</span>
+            <span class="stat-value">3</span>
+          </div>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Satuan Panjang</span>
+          <span class="topic-tag">Satuan Berat</span>
+          <span class="topic-tag">Satuan Waktu</span>
+          <span class="topic-tag">Multi-Langkah</span>
+        </div>
+        <div class="cta cta-secondary">Mulai Latihan →</div>
+      </a>
+
+      <!-- Matematika Set Interaktif -->
+      <a href="psat_matematika_kelas2_interaktif_ben.html" class="card matematika" title="Buka soal Matematika Set Interaktif">
+        <div class="card-header">
+          <div class="card-icon">🎮</div>
+          <div>
+            <div class="card-title">Set Interaktif</div>
+            <div class="card-subtitle">Dengan Visualisasi</div>
+          </div>
+        </div>
+        <span class="badge-set">3 Set Lengkap</span>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Total Soal:</span>
+            <span class="stat-value">180</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Set:</span>
+            <span class="stat-value">3</span>
+          </div>
+        </div>
+        <div class="topics">
+          <span class="topic-tag">Jam Analog</span>
+          <span class="topic-tag">Penggaris</span>
+          <span class="topic-tag">Neraca</span>
+          <span class="topic-tag">Tabel</span>
+        </div>
+        <div class="cta cta-secondary">Mulai Latihan →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <h3>📌 Informasi Penting</h3>
+    <p>
+      Platform PSAT Kelas 2 ini menyediakan 70+ soal latihan interaktif untuk mempersiapkan Penilaian Sumatif Akhir Tahun.
+      Setiap soal dilengkapi dengan pembahasan dan umpan balik otomatis untuk membantu proses belajar.
+    </p>
+    <div class="divider"></div>
+    <p style="font-size: 0.95em; margin-bottom: 20px;">
+      ✨ Dibuat dengan ❤️ untuk siswa dan guru SD Kelas 2
+    </p>
+    <div class="footer-links">
+      <a href="https://github.com/ivtmath/psat-kelas2-ben" class="footer-link" target="_blank">
+        🔗 GitHub Repository
+      </a>
+      <a href="https://github.com/ivtmath" class="footer-link" target="_blank">
+        👤 Profil ivtmath
+      </a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
